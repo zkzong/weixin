@@ -9,8 +9,9 @@ import com.imooc.trans.Data;
 import com.imooc.trans.Parts;
 import com.imooc.trans.Symbols;
 import com.imooc.trans.TransResult;
-import com.sun.deploy.net.HttpResponse;
+import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.ParseException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -32,6 +33,8 @@ import java.net.URLEncoder;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 微信工具类

@@ -14,9 +14,9 @@ public class WeixinTest {
             String mediaId = WeixinUtil.upload(path, token.getToken(), "image");
             System.out.println(mediaId);
 
-            String result = WeixinUtil.translate("my name is laobi");
+            //String result = WeixinUtil.translate("my name is laobi");
             //String result = WeixinUtil.translateFull("");
-            System.out.println(result);
+            //System.out.println(result);
         } catch (Exception e) {
             e.printStackTrace();
         }

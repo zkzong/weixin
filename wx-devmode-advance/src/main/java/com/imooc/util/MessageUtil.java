@@ -217,7 +217,7 @@ public class MessageUtil {
     public static String initImageMessage(String toUserName, String fromUserName) {
         String message = null;
         Image image = new Image();
-        image.setMediaId("JTH8vBl0zDRlrrn2bBnMleySuHjVbMhyAo0U2x7kQyd1ciydhhsVPONbnRrKGp8m");
+        image.setMediaId("B2yczSmo0urpc1BHts5aCC-npCCeXfxZwMxViR58Jh6811cicxa8GDItgd4nUNgn");
         ImageMessage imageMessage = new ImageMessage();
         imageMessage.setFromUserName(toUserName);
         imageMessage.setToUserName(fromUserName);
@@ -238,7 +238,7 @@ public class MessageUtil {
     public static String initMusicMessage(String toUserName, String fromUserName) {
         String message = null;
         Music music = new Music();
-        music.setThumbMediaId("WsHCQr1ftJQwmGUGhCP8gZ13a77XVg5Ah_uHPHVEAQuRE5FEjn-DsZJzFZqZFeFk");
+        music.setThumbMediaId("B2yczSmo0urpc1BHts5aCC-npCCeXfxZwMxViR58Jh6811cicxa8GDItgd4nUNgn");
         music.setTitle("see you again");
         music.setDescription("速7片尾曲");
         music.setMusicUrl("http://zongzhankui.xicp.net/wx-devmode/resource/See You Again.mp3");

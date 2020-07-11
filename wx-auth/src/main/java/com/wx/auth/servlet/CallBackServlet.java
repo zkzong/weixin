@@ -54,7 +54,7 @@ public class CallBackServlet extends HttpServlet {
                 + "&lang=zh_CN";
         JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
         System.out.println(userInfo);
-        String unionid = userInfo.getString("unionid");
+        //String unionid = userInfo.getString("unionid");
 
         //1、使用微信用户信息直接登录，无需注册和绑定
         //req.setAttribute("info", userInfo);
@@ -62,14 +62,14 @@ public class CallBackServlet extends HttpServlet {
 
         //2、将微信与当前系统的账号进行绑定
         try {
-            String nickName = getNickName(unionid);
+            String nickName = getNickName(openid);
             if (!"".equals(nickName)) {
                 //绑定成功
                 req.setAttribute("nickName", nickName);
                 req.getRequestDispatcher("/index2.jsp").forward(req, resp);
             } else {
                 //未绑定
-                req.setAttribute("unionid", unionid);
+                req.setAttribute("openid", openid);
                 req.getRequestDispatcher("/login.jsp").forward(req, resp);
             }
         } catch (SQLException e) {
@@ -78,12 +78,12 @@ public class CallBackServlet extends HttpServlet {
         }
     }
 
-    public String getNickName(String unionid) throws SQLException {
+    public String getNickName(String openid) throws SQLException {
         String nickName = "";
         conn = DriverManager.getConnection(dbUrl, userName, passWord);
-        String sql = "select nickname from user where unionid=?";
+        String sql = "select nickname from user where openid=?";
         ps = conn.prepareStatement(sql);
-        ps.setString(1, unionid);
+        ps.setString(1, openid);
         rs = ps.executeQuery();
         while (rs.next()) {
             nickName = rs.getString("NICKNAME");
@@ -94,11 +94,11 @@ public class CallBackServlet extends HttpServlet {
         return nickName;
     }
 
-    public int updUser(String unionid, String account, String password) throws SQLException {
+    public int updUser(String openid, String account, String password) throws SQLException {
         conn = DriverManager.getConnection(dbUrl, userName, passWord);
-        String sql = "update user set unionid=? where account=? and password=?";
+        String sql = "update user set openid=? where account=? and password=?";
         ps = conn.prepareStatement(sql);
-        ps.setString(1, unionid);
+        ps.setString(1, openid);
         ps.setString(2, account);
         ps.setString(3, password);
         int temp = ps.executeUpdate();
@@ -114,9 +114,9 @@ public class CallBackServlet extends HttpServlet {
             throws ServletException, IOException {
         String account = req.getParameter("account");
         String password = req.getParameter("password");
-        String unionid = req.getParameter("unionid");
+        String openid = req.getParameter("openid");
         try {
-            int temp = updUser(unionid, account, password);
+            int temp = updUser(openid, account, password);
             if (temp > 0) {
                 System.out.println("账号绑定成功");
             } else {

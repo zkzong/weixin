@@ -10,7 +10,7 @@
     <servlet-class>com.wx.auth.servlet.CallBackServlet</servlet-class>
     <init-param>
       <param-name>dbUrl</param-name>
-      <param-value>jdbc:mysql://127.0.0.1:3306/auth</param-value>
+      <param-value>jdbc:mysql://127.0.0.1:3306/auth?serverTimezone=UTC</param-value>
     </init-param>
     <init-param>
       <param-name>driverName</param-name>

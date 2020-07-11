@@ -1,7 +1,6 @@
 package com.wx.auth.util;
 
-import java.io.IOException;
-
+import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -9,9 +8,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
-import net.sf.json.JSONObject;
+import java.io.IOException;
 
 public class AuthUtil {
+    // 公众平台
     public static final String APPID = "wx0af62dfdabca3ec2";
     public static final String APPSECRET = "88ca52017cb23d2199939ab49d1cc8a5";
 

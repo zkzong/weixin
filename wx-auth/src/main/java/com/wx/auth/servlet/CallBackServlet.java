@@ -1,22 +1,19 @@
 package com.wx.auth.servlet;
 
+import com.wx.auth.util.AuthUtil;
+import net.sf.json.JSONObject;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONObject;
-
-import com.wx.auth.util.AuthUtil;
 
 public class CallBackServlet extends HttpServlet {
     private String dbUrl;
@@ -59,19 +56,19 @@ public class CallBackServlet extends HttpServlet {
         System.out.println(userInfo);
         String unionid = userInfo.getString("unionid");
 
-        //1��ʹ��΢���û���Ϣֱ�ӵ�¼������ע��Ͱ�
+        //1、使用微信用户信息直接登录，无需注册和绑定
         //req.setAttribute("info", userInfo);
         //req.getRequestDispatcher("/index1.jsp").forward(req, resp);
 
-        //2����΢���뵱ǰϵͳ���˺Ž��а�
+        //2、将微信与当前系统的账号进行绑定
         try {
             String nickName = getNickName(unionid);
             if (!"".equals(nickName)) {
-                //�󶨳ɹ�
+                //绑定成功
                 req.setAttribute("nickName", nickName);
                 req.getRequestDispatcher("/index2.jsp").forward(req, resp);
             } else {
-                //δ��
+                //未绑定
                 req.setAttribute("unionid", unionid);
                 req.getRequestDispatcher("/login.jsp").forward(req, resp);
             }
@@ -121,9 +118,9 @@ public class CallBackServlet extends HttpServlet {
         try {
             int temp = updUser(unionid, account, password);
             if (temp > 0) {
-                System.out.println("�˺Ű󶨳ɹ�");
+                System.out.println("账号绑定成功");
             } else {
-                System.out.println("�˺Ű�ʧ��");
+                System.out.println("账号绑定失败");
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -132,3 +129,4 @@ public class CallBackServlet extends HttpServlet {
 
     }
 }
+

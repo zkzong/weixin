@@ -11,6 +11,7 @@
     <modules>
         <module>wx-devmode</module>
         <module>wx-devmode-advance</module>
+        <module>wx-auth</module>
     </modules>
 
 

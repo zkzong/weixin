@@ -5,15 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zkzong</groupId>
-    <artifactId>weixin</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>wxgzptyykf</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>wx-devmode</module>
-        <module>wx-devmode-advance</module>
-        <module>wx-auth</module>
-        <module>wxgzptyykf</module>
-    </modules>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
 </project>

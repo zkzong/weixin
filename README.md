@@ -1,5 +1,7 @@
 # weixin
 
+[![Build Status](https://travis-ci.com/zkzong/weixin.svg?branch=master)](https://travis-ci.com/zkzong/weixin)
+
 ## wx-devmode
 微信公众号开发模式
 1. 接入

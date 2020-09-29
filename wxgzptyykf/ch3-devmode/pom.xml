@@ -2,14 +2,11 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>wxgzptyykf</artifactId>
-        <groupId>com.zkzong</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <groupId>com.zkzong</groupId>
+    <artifactId>ch3-devmode</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ch3-devmode</artifactId>
     <packaging>war</packaging>
 
     <name>ch3-devmode Maven Webapp</name>
@@ -26,7 +23,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

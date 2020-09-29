@@ -17,6 +17,7 @@
 
     <modules>
         <module>ch3-devmode</module>
+        <module>ch4-message</module>
     </modules>
 
     <dependencies>

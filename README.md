@@ -1,6 +1,7 @@
 # weixin
 
 [![Build Status](https://travis-ci.com/zkzong/weixin.svg?branch=master)](https://travis-ci.com/zkzong/weixin)
+[![CircleCI](https://circleci.com/gh/zkzong/weixin.svg?style=svg)](https://circleci.com/gh/zkzong/weixin)
 
 ## wx-devmode
 微信公众号开发模式
